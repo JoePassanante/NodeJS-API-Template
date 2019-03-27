@@ -1,6 +1,9 @@
+/**
+ * @author Joe Passanante
+ */
 const express = require("express")
 const app = express()
-const port = process.env.PORT || 8080; //port we will listen for connections on. 
+const port = process.env.PORT || 5000; //port we will listen for connections on. 
 // const mongoose = require("mongoose") //Library we will be using for connecting and manipulating mongoDB documents. 
 const path = require("path") // Default Node library. 
 
@@ -39,6 +42,13 @@ app.get("/jsondata",(req,res,next)=>{
 
 })
 
+
+//Here we are using a route. 
+//Routes are great for when we have complex routes that are going to have a ton of subtrees.
+const clientrouter = require("./routes/clientrouter")
+app.use("/clients",clientrouter);
+
+//catch unknown traffic
 app.get("*",(req,res,next)=>{ // * represents a wild card. Any pages that do not match the pages above will be handled here.
     
     //we don't have to send a file. We can just send text if we wish.
@@ -46,6 +56,8 @@ app.get("*",(req,res,next)=>{ // * represents a wild card. Any pages that do not
     res.send("Brother, this page does not exist.")
 
 })
+
+
 console.log("Server started on port " + port)
 app.listen(port)
 console.log("Webpage can be found at http://localhost:"+port)
