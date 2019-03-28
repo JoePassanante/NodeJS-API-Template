@@ -91,6 +91,12 @@ router.route("/")
 
 
         //If we made it here, we are gooooood.
+
+        //This is a method that accepts 2 parameters, the ID of the object we are updating, and the json object to be changed. 
+        //Just a reminder, our data variable really looks like this: {name: "",author:""} - which is what we checked for on line 88!
+        //This directly matches up with the schema we created. 
+        //There are more advanced ways to edit objects, but this is the building block. Please see mongoose documentation for more.
+
         Book.findByIdAndUpdate(query.id, data).exec()
         .then(doc=>{
             res.json(doc);
