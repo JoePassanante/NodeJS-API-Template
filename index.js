@@ -8,8 +8,8 @@ const mongoose = require("mongoose") //Library we will be using for connecting a
 const path = require("path") // Default Node library. 
 const bodyparser = require("body-parser")
 
-const DBconfig = require("./config/db")
 //Here we set up out mongoose connections. 
+const DBconfig = require("./config/db")
 
 app.use(bodyparser.json()); // get information from html forms
 
