@@ -12,6 +12,9 @@ In the root folder from console run `node index.js` and this will start the prog
 
 The entry point for nodejs apps is typically `index.js` or `server.js`. Depends on the developer. 
 
+## Setting up MongoDB
+In the config folder, you need to create a `db.js` file. please read howTO.txt for more information. 
+
 ### Suggestion
 Download `nodemon` which automatically restarts the node server when you make changes. The default `node` command does not refresh when you make changes, making testing tedious. You can download nodemon by running `npm i -g nodemon` this installs it globally so you can use it in any other nodejs project!
 

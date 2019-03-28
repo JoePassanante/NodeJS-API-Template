@@ -7,3 +7,5 @@ module.exports = {
 }
 
 Set the value of the url to your mongoDB url. 
+
+name the file db.js
